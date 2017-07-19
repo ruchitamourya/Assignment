@@ -1,10 +1,11 @@
 /**
  * Created by ruchi on 18/07/2017.
+ * This class contains order information
  */
 public class Order {
     private String orderId;
     private String status;
-    private String value;
+    private double value;
 
     public void setOrderId(String orderId){
         this.orderId = orderId;
@@ -22,11 +23,11 @@ public class Order {
         return status;
     }
 
-    public void setValue(String value){
+    public void setValue(double value){
         this.value = value;
     }
 
-    public String getValue(){
+    public double getValue(){
         return value;
     }
 }

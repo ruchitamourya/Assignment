@@ -2,14 +2,34 @@ import java.util.ArrayList;
 
 /**
  * Created by ruchi on 17/07/2017.
+ * A class which holds info of employee
  */
-public class Employee extends Person {// A subclass Employee extends superclass Person
-    // three fields of this class
+public class Employee extends Person {
     private int employeeId;
     private String blooGroup;
     private String designation;
-    private Employee manager;
-    private ArrayList<Task> tasks ;
+    private Manager manager;
+
+    //An employee can have many tasks
+    private ArrayList<Task> tasks;
+
+    // Employees are equal if there employeeId matches.
+    @Override
+    public boolean equals(Object employee) {
+        if (this == employee) {
+            return true;
+        }
+        if (employee instanceof Employee) {
+            Employee anotherEmployee = (Employee) employee;
+            if (this.employeeId == anotherEmployee.employeeId) {
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
 
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
@@ -35,17 +55,20 @@ public class Employee extends Person {// A subclass Employee extends superclass 
         return designation;
     }
 
-    public void setManager(Employee manager){
-        this.manager = manager ;
+    public void setManager(Manager manager) {
+        this.manager = manager;
     }
 
-    public Employee getManager(){
+    public Manager getManager() {
         return manager;
     }
 
-    public void setTasks(ArrayList<Task> tasks){
-        this.tasks =tasks;
+    public void setTasks(ArrayList<Task> tasks) {
+        this.tasks = tasks;
     }
 
+    public ArrayList<Task> getTasks() {
+        return tasks;
+    }
 
 }

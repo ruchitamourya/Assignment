@@ -6,18 +6,17 @@ public class Task {
     private String description;
     private String state;
 
-    public int getTaskId(){
+    public void setTaskId(int taskId){this.taskId = taskId;}
+    public int getTaskId() {
         return taskId;
     }
 
-    public void setTaskId(int taskId){
-        this.taskId = taskId;
-    }
-
+    public void setDescription(String description){this.description = description;}
     public String getDescription(){
         return description;
     }
 
+    public void setState(String state){this.state = state;}
     public String getState(){
         return state;
     }
